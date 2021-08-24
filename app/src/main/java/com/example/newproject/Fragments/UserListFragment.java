@@ -47,7 +47,7 @@ public class UserListFragment extends Fragment {
         recyclerView = view.findViewById(R.id.f3recyclerview);
         list = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()) );
-        userDatabase = UserDatabase.getINSTANCE(getContext());
+        userDatabase = UserDatabase.getUserDatabase(getContext());
 
         new Thread(new Runnable() {
             @Override

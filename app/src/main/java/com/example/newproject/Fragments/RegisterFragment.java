@@ -28,7 +28,7 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_register, container, false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
 
         username = view.findViewById(R.id.f2Username);
         email = view.findViewById(R.id.f2Email);
@@ -37,34 +37,39 @@ public class RegisterFragment extends Fragment {
         registerbtn = view.findViewById(R.id.f2Register);
 
 
-        userDatabase = UserDatabase.getINSTANCE(getContext());
-       registerbtn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
+        userDatabase = UserDatabase.getUserDatabase(getContext());
+        registerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-               new Thread(new Runnable() {
-                   @Override
-                   public void run() {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
 
-                       UserEntity userEntity = new UserEntity();
-                       userEntity.setUsername(username.getText().toString());
-                       userEntity.setEmail(email.getText().toString());
-                       userEntity.setPassword(password.getText().toString());
-                       userEntity.setConfirmpassword(confirmpassword.getText().toString());
-
-                      userDatabase.Dao().registerUser(userEntity);
-
-                   }
+                        UserEntity userEntity = new UserEntity();
 
 
-               }).start();
+                        userEntity.setUsername(username.getText().toString());
+                        userEntity.setEmail(email.getText().toString());
+                        userEntity.setPassword(password.getText().toString());
+                        userEntity.setConfirmpassword(confirmpassword.getText().toString());
+
+                        userDatabase.Dao().registerUser(userEntity);
 
 
+                    }
 
 
-           }
-       });
+                }).start();
 
-    return view;
+
+            }
+
+
+        });
+
+
+        return view;
     }
 }
+
