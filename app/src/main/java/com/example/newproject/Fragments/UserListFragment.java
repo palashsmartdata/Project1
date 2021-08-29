@@ -37,6 +37,7 @@ public class UserListFragment extends Fragment {
     RecyclerAdapter adapter;
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class UserListFragment extends Fragment {
         View  view = inflater.inflate(R.layout.fragment_user_list, container, false);
 
         recyclerView = view.findViewById(R.id.f3recyclerview);
+
         list = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()) );
         userDatabase = UserDatabase.getUserDatabase(getContext());
@@ -66,6 +68,8 @@ public class UserListFragment extends Fragment {
 
             }
         }).start();
+
+
 
         return view;
 

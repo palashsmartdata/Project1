@@ -58,6 +58,7 @@ String Email, Pass;
         userDatabase = UserDatabase.getUserDatabase(getContext());
 
 
+
             sharedPreferences = requireContext().getSharedPreferences("Data", Context.MODE_PRIVATE);
             editor =  sharedPreferences.edit();
 
@@ -89,14 +90,19 @@ String Email, Pass;
                                             editor.putString("Logged_user", userEntity.getUsername());
                                             editor.putString("Looged_email", userEntity.getEmail());
                                             editor.apply();
-                                          Toast.makeText(getContext(), "Logged in With : " + userEntity.getUsername(), Toast.LENGTH_SHORT).show();
-                                          getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainlinearlayout,  new HomeScreenLogin()).commit();
+
+                                            new Handler(Looper.myLooper()).post(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    Toast.makeText(getContext(), "Logged in With : " + userEntity.getUsername(), Toast.LENGTH_SHORT).show();
+                                                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainlinearlayout,  new HomeScreenLogin()).commit();
+                                                }
+                                            });
                                       }
                                   });
 
                                  }
                                  else{
-
                                  }
 
                              }

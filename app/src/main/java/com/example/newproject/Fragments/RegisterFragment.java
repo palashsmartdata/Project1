@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +57,24 @@ public class RegisterFragment extends Fragment {
                         userEntity.setConfirmpassword(confirmpassword.getText().toString());
 
                         userDatabase.Dao().registerUser(userEntity);
+
+                        new Handler(Looper.getMainLooper()).post(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                if (userEntity.getUsername().isEmpty() ||
+                                        userEntity.getEmail().isEmpty() ||
+                                        userEntity.getPassword().isEmpty() ||
+                                        userEntity.getConfirmpassword().isEmpty()){
+
+                                    Toast.makeText(getContext(), "All Fields Mandotary", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(getContext(), "Successfully Registered", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        });
+
 
 
                     }

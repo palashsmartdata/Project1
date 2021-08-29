@@ -10,12 +10,13 @@ import android.widget.LinearLayout;
 
 import com.example.newproject.Fragments.LoginFragment;
 import com.example.newproject.Fragments.RegisterFragment;
+import com.example.newproject.Fragments.RetroFragment;
 import com.example.newproject.Fragments.UserListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout linearLayout;
-    Button loginbtn, signupbtn, userlistbtn;
+    Button loginbtn, signupbtn, userlistbtn, retrobtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         signupbtn = findViewById(R.id.Signup);
         userlistbtn = findViewById(R.id.Userlist);
         linearLayout = findViewById(R.id.mainlinearlayout);
+        retrobtn = findViewById(R.id.Retrobtn);
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.mainlinearlayout, new LoginFragment()).commit();
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        retrobtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                RetroFragment retroFragment = new RetroFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.mainlinearlayout, retroFragment);
+                transaction.commit();
+
+            }
+        });
     }
 
 
