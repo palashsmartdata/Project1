@@ -12,15 +12,15 @@ import androidx.room.RoomDatabase;
 
 public abstract class UserDatabase extends RoomDatabase {
 
-    public  abstract UserDao Dao();
+    public abstract UserDao Dao();
 
-    private static final String dbNme="db_user";
+    private static final String dbNme = "db_user";
     private static UserDatabase userDatabase;
 
-    public static synchronized UserDatabase getUserDatabase(Context context){
+    public static synchronized UserDatabase getUserDatabase(Context context) {
 
-        if(userDatabase==null){
-            userDatabase= Room.databaseBuilder(context,UserDatabase.class,dbNme)
+        if (userDatabase == null) {
+            userDatabase = Room.databaseBuilder(context, UserDatabase.class, dbNme)
                     .build();
 
         }

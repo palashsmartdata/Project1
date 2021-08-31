@@ -33,8 +33,8 @@ public class RetroFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_retro, container, false);
 
 
-       retrotextview = view.findViewById(R.id.retroTextView);
-       retrotextview.setText(" ");
+        retrotextview = view.findViewById(R.id.retroTextView);
+        retrotextview.setText(" ");
 
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();
@@ -48,9 +48,8 @@ public class RetroFragment extends Fragment {
             public void onResponse(Call<List<Model>> call, Response<List<Model>> response) {
 
                 List<Model> data = response.body();
-                for(int i=0; i< data.size(); i++)
-                {
-                    retrotextview.append(" ID " + data.get(i).getRid() + "\n TITLE " + data.get(i).getTitle() +"\n\n\n"  );
+                for (int i = 0; i < data.size(); i++) {
+                    retrotextview.append(" ID " + data.get(i).getRid() + "\n TITLE " + data.get(i).getTitle() + "\n\n\n");
                 }
 
             }
@@ -60,11 +59,6 @@ public class RetroFragment extends Fragment {
 
             }
         });
-
-
-
-
-
 
 
         return view;

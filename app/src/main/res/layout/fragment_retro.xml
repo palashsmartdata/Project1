@@ -8,20 +8,19 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/retroTextView"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:text="Demo Text"
-        android:layout_marginBottom="5dp">
-    </TextView>
+        android:padding="10dp">
 
-</ScrollView>
+        <TextView
+            android:id="@+id/retroTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:text="Demo Text"
+            android:textColor="@color/black"
+            android:textSize="24sp"></TextView>
+
+    </ScrollView>
 </LinearLayout>

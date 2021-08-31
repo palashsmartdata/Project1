@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/loginbtn"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Login">
+
+    </item>
+
+    <item android:id="@+id/Signup"
+        android:icon="@drawable/person_add"
+        android:title="SignUp">
+
+    </item>
+
+
+    <item android:id="@+id/Userlist"
+        android:icon="@drawable/userlisticon"
+        android:title="UserList">
+
+    </item>
+
+
+
+    <item android:id="@+id/Retrobtn"
+
+        android:title="Retrofit">
+
+    </item>
+
+</menu>

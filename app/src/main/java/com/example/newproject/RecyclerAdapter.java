@@ -62,6 +62,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         TextView tv1, tv2;
         ImageButton deletebtn;
 
+
         public RecyclerViewHolder(@NonNull View itemView) {
 
             super(itemView);

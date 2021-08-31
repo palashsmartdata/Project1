@@ -11,8 +11,7 @@ import java.util.List;
 
 
 @Dao
-public interface UserDao
-{
+public interface UserDao {
     @Insert
     void registerUser(UserEntity userEntity);
 
@@ -29,8 +28,7 @@ public interface UserDao
     void deleteUser(UserEntity userEntity);
 
     @Query("Select * from Users where uid = (:iD)")
-    UserEntity getId (int iD);
-
+    UserEntity getId(int iD);
 
 
 }

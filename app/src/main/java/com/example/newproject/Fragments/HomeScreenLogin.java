@@ -50,7 +50,6 @@ public class HomeScreenLogin extends Fragment {
         homescreentextview.setText(name);
 
 
-
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

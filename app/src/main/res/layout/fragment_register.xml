@@ -75,7 +75,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/round_bg"
         android:text="Register"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f2ConfirmPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/datetextview" />
 
     <EditText
         android:id="@+id/f2ConfirmPassword"
@@ -129,5 +129,24 @@
         app:layout_constraintTop_toBottomOf="@+id/f2view2">
 
     </EditText>
+
+    <TextView
+        android:id="@+id/datetextview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/calender"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Date"
+        android:padding="16dp"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f2ConfirmPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
